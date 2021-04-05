@@ -29,6 +29,7 @@ html {
   --dark: rgba(7,8,11,1);
   --red: rgba(255,46,106,1);
   --yellow: rgba(249,160,0,1);
+  --inputBlue: rgba(17,20,28,1);
  --gradient: 'linear-gradient(rgba(5,85,255,1), rgba(255,46,106,1))',
 
 }
@@ -141,5 +142,65 @@ body {
 }
 
 .top-text-container {
-  min-height: 700px;
+  min-height: 800px;
+}
+
+.text-white {
+  color: #fff  !important;
+  font-family: 'Wigrum';
+}
+
+.menu-flags {
+  background-color: rgba(17,20,28,1);
+  border-radius: 0.75rem;
+}
+
+.menu-flags  button {
+  border: none;
+}
+
+.menu-flags  button:focus {
+  border: none;
+  outline: none;
+}
+
+.menu-flags input, .menu-flags .ReactFlagsSelect-module_filterBox__3m8EU {
+  background-color:  var(--inputBlue);
+}
+
+.menu-flags:focus-within {
+  border: 1px solid var(--blue);
+}
+.menu-flags ul {
+  background-color: var(--inputBlue);
+  color: var(--white);
+  border: none;
+}
+.menu-flags .ReactFlagsSelect-module_label__27pw9 {
+  color: var(--white);
+  
+}
+.menu-flags li:hover span {
+  color: var(--inputBlue);
+}
+.menu-flags .ReactFlagsSelect-module_selectBtn__19wW7:after {
+  border-top: 5px solid #fff;
+}
+
+.menu-flags .ReactFlagsSelect-module_selectValue__152eS {
+  color: #A1A1AA;
+}
+
+.input{
+  border: 1px solid transparent;
+  transition: 200ms ease;
+}
+.input:focus {
+  border-color: var(--blue);
+}
+.btn{
+  transition: 200ms ease;
+}
+.btn:hover {
+  box-shadow: 4px 4px rgba(5, 85, 255, 0.4)
 }

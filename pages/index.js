@@ -1,4 +1,5 @@
 import Button from '../components/Button';
+import Footer from '../components/Footer';
 import Form from '../components/Form';
 
 export default function Home() {
@@ -98,7 +99,7 @@ export default function Home() {
               Generate, Send and <br />
               Follow up on Invoices
             </h3>
-            <p className="text-textColor max-w-full md:max-w-md leading-relaxed py-10 text-2xl">
+            <p className="text-textColor max-w-full md:max-w-2xl leading-relaxed py-10 text-2xl">
               Integrate "Pay with Bitsika" on your app or website so that Bitsika users can instantly pay you with their
               Bitsika balance via our API. Payout to any Bitsika user account via our API as well.{' '}
             </p>
@@ -118,7 +119,7 @@ export default function Home() {
               <br />
               your services
             </h3>
-            <p className="text-textColor max-w-full md:max-w-md leading-relaxed py-10 text-2xl">
+            <p className="text-textColor max-w-full md:max-w-2xl leading-relaxed py-10 text-2xl">
               Integrate "Pay with Bitsika" on your app or website so that Bitsika users can instantly pay you with their
               Bitsika balance via our API. Payout to any Bitsika user account via our API as well.
             </p>
@@ -131,7 +132,7 @@ export default function Home() {
               Manage your <br />
               projects and clients
             </h3>
-            <p className="text-textColor max-w-full md:max-w-md leading-relaxed py-10 text-2xl">
+            <p className="text-textColor max-w-full md:max-w-2xl leading-relaxed py-10 text-2xl">
               Integrate "Pay with Bitsika" on your app or website so that Bitsika users can instantly pay you with their
               Bitsika balance via our API. Payout to any Bitsika user account via our API as well.
             </p>
@@ -142,6 +143,7 @@ export default function Home() {
         </div>
       </section>
       <Form />
+      <Footer />
     </div>
   );
 }
