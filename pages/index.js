@@ -90,7 +90,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="app bg-dark  py-20 z-20 max-w-screen-lg px-10 sm:px-20 mx-auto relative">
+      <section className="app bg-dark  py-20 z-20 max-w-screen-lg px-10 sm:px-20 mx-auto relative overflow-hidden">
         <img src="/svgs/app.svg" alt="Versoe app" className="w-100 mt-10 md:-mt-300 hidden md:block" />
         <img src="/svgs/app-mobile.svg" alt="varsoe mobile" className="md:hidden mx-auto" />
         <div className="grid md:grid-cols-2 grid-cols-1 gap-y-14 gap-x-64 items-center my-60">
