@@ -1,16 +1,104 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-}
+@font-face {
+  font-family: 'wigrum';
+      src: url('/fonts/wigrum.otf');
+  }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 
 * {
   box-sizing: border-box;
+}
+html {
+    width: 100%;
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+@media screen and (min-width: 480px) {
+  html {
+    font-size: 50%;
+  }
+}
+
+:root {
+  --white: #fff;
+  --blue: #2860E1;
+  --dark: rgba(7,8,11,1);
+ --gradient: 'linear-gradient(rgba(5,85,255,1), rgba(255,46,106,1))',
+
+}
+
+body {
+  color: var(--white);
+  font-family: "Wigrum";
+}
+
+
+
+
+.container {
+  max-width: 1300px;
+}
+
+.top-section {
+  background:  top left / 200px 200px repeat  url('/big-circle.png');
+  position: relative;
+}
+.top-section:before {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  content: '';
+  position: absolute;
+  background: var(--dark);
+  z-index: 1;
+  opacity: 0.6;
+}
+
+.gradient-text {
+  background: linear-gradient(rgba(5,85,255,1), rgba(255,46,106,1));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.form {
+  background: url('/form-bg.png') ;
+  min-height: 700px;
+  background-attachment: fixed;
+}
+
+.icon {
+  z-index: 12  !important;
+}
+
+.icon-absolute {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+ 
+}
+
+.icon-money {
+    top: -100px  !important;
+    left: -170px  !important;
+}
+
+.icon-book {
+  left: -100px  !important;
+  bottom: -150px  !important;
+}
+
+.icon-money-bag {
+  top: -120px  !important;
+  right: -150px  !important;
+}
+
+.icon-aero {
+  bottom: -20px  !important;
+  right: -250px  !important;
+ 
 }
