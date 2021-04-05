@@ -6,7 +6,7 @@ export default function Home() {
     <div className="bg-dark">
       <section className="top-section min-h-100 md:min-h-screen">
         <div className="border-b border-border">
-          <header className="px-10 py-3 sm:py-8 flex container mx-auto justify-between text-white relative z-10  align-items-center">
+          <header className="px-2 py-3 sm:py-8 flex container mx-auto justify-between text-white relative z-10  align-items-center">
             <svg width="134" height="34" viewBox="0 0 134 34" fill="none" xmlns="http://www.w3.org/2000/svg">
               <g filter="url(#filter0_b)">
                 <path
@@ -67,7 +67,7 @@ export default function Home() {
             </Button>
           </header>
         </div>
-        <div className="max-w-8xl  mx-auto flex justify-center items-center  py-80 relative">
+        <div className="max-w-8xl top-text-container  mx-auto flex justify-center items-center  py-80 relative">
           <div className="flex flex-col relative  z-10 pt-10 pb-5 ">
             <h1 className="text-center font-medium  text-7xl  md:text-8xl ">
               Freelancing tools for the
@@ -103,12 +103,12 @@ export default function Home() {
               Bitsika balance via our API. Payout to any Bitsika user account via our API as well.{' '}
             </p>
           </div>
-          <div className="">
+          <div className="feature-img red">
             <img src="/svgs/invoice.svg" alt="invoice" className="w-full" />
           </div>
         </div>
         <div className="grid md:grid-cols-2 grid-cols-1 gap-y-14 gap-x-64 items-center my-60">
-          <div className="order-2 md:order-1">
+          <div className="order-2 md:order-1 feature-img blue">
             <img src="/svgs/payments.svg" alt="invoice" className="w-full" />
           </div>
           <div className="order-1 md:order-2">
@@ -136,7 +136,7 @@ export default function Home() {
               Bitsika balance via our API. Payout to any Bitsika user account via our API as well.
             </p>
           </div>
-          <div className="">
+          <div className="feature-img yellow">
             <img src="/svgs/timeline.svg" alt="projects" className="w-full" />
           </div>
         </div>

@@ -27,6 +27,8 @@ html {
   --white: #fff;
   --blue: #2860E1;
   --dark: rgba(7,8,11,1);
+  --red: rgba(255,46,106,1);
+  --yellow: rgba(249,160,0,1);
  --gradient: 'linear-gradient(rgba(5,85,255,1), rgba(255,46,106,1))',
 
 }
@@ -101,4 +103,43 @@ body {
   bottom: -20px  !important;
   right: -250px  !important;
  
+}
+
+.feature-img {
+  position: relative;
+}
+
+.feature-img img {
+  z-index: 40;
+  position: relative;
+
+}
+.feature-img:after {
+  position: absolute;
+  content: '';
+  top: 0;
+  bottom: 0;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  filter: blur(500px);
+}
+
+.feature-img.red:after {
+  background-color: var(--red);
+  right: -50%;
+}
+
+.feature-img.blue:after {
+  background-color: var(--blue);
+  left: -50%;
+}
+
+.feature-img.yellow:after {
+  background-color: var(--yellow);
+  right: -50%;
+}
+
+.top-text-container {
+  min-height: 700px;
 }
