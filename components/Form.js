@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import ReactFlagsSelect from 'react-flags-select';
 import Button from './Button';
 import Input from './Input';
@@ -9,9 +9,41 @@ export const EMAIL_REGEX = /(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/
 export const PASSWORD_REGEX = /(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}/;
 
 const Form = () => {
-  const [form, setForm] = useState({ error: '', loading: false, country: '' });
+  const [form, setForm] = useState({ country: '' });
+  const [errors, setErrors] = useState({});
+  const [loading, setLoading] = useState(false);
+  const [status, setStatus] = useState('');
+
+  const isFormValid = () => {
+    const errs = {};
+    if (!form.firstName) {
+      errs.firstName = 'Please enter your first name';
+    }
+
+    if (!form.email || !EMAIL_REGEX.test(form.email)) {
+      errs.email = 'Please enter a valid email';
+    }
+
+    if (!form.lastName) {
+      errs.lastName = 'Please enter your last name';
+    }
+
+    if (!form.country) {
+      errs.country = 'Please select your country';
+    }
+
+    const isValid = Object.values(errs).every((err) => err === '');
+    return { isValid, errs };
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    const { isValid, errs } = isFormValid();
+    setErrors(errs);
+    if (!isValid) {
+      return;
+    }
     setForm({ ...form, error: '' });
     const fields = {
       fields: {
@@ -21,37 +53,73 @@ const Form = () => {
         Email: form.email,
       },
     };
-    setForm({ ...form, loading: true });
+    setLoading(true);
     fetch('https://api.airtable.com/v0/app4NnG5rlaf1gAnk/form', {
       method: 'POST',
       headers: { Authorization: `Bearer ${process.env.AIRTABLE_API}`, 'Content-Type': 'application/json' },
       body: JSON.stringify(fields),
     })
-      .then(() => alert('Form Sent!'))
+      .then(() => {
+        setStatus('success');
+        setForm({ email: '', firstName: '', lastName: '', country: '' });
+      })
       .catch((error) => {
-        setForm({ ...form, error: 'An error occurred while trying to submit this form, Please try again.' });
+        setStatus('error');
       })
       .finally(() => {
-        setForm({ ...form, loading: false });
+        setLoading(false);
       });
   };
 
-  const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setForm({ ...form, [name]: value });
+    if (value) {
+      const errorEntries = Object.entries(errors).filter(([errorName]) => errorName !== name);
+      setErrors(Object.fromEntries(errorEntries));
+    }
+  };
+
+  useEffect(() => {
+    if (status === 'success') {
+      setTimeout(() => {
+        setStatus('');
+      }, 1500);
+    }
+  }, [status]);
   return (
     <div id="form">
       <div className="form flex items-center justify-center">
         <div className="form-group bg-dark py-20 px-20 min-w-1/3   rounded-xl">
           <form action="POST">
             <h2 className="text-center text-5xl mb-20 gradient-text">Get early access</h2>
-            <div className="form-group mb-10 grid grid-cols-2 gap-10">
-              <Input placeholder="First name" type="text" name="firstName" onChange={handleChange} />
-              <Input placeholder="Last name" type="text" name="lastName" onChange={handleChange} />
+            <div className="form-group  grid grid-cols-2 gap-10 mb-20">
+              <div>
+                <Input
+                  placeholder="First name"
+                  value={form.firstName}
+                  type="text"
+                  name="firstName"
+                  onChange={handleChange}
+                />
+                {errors.firstName && <div className="input-error">{errors.firstName}</div>}
+              </div>
+              <div>
+                <Input
+                  placeholder="Last name"
+                  value={form.lastName}
+                  type="text"
+                  name="lastName"
+                  onChange={handleChange}
+                />
+                {errors.lastName && <div className="input-error">{errors.lastName}</div>}
+              </div>
             </div>
-            <div className="mb-10">
-              <Input placeholder="Email address" type="text" name="email" onChange={handleChange} />
+            <div className="mb-20">
+              <Input placeholder="Email address" value={form.email} type="text" name="email" onChange={handleChange} />
+              {errors.email && <div className="input-error">{errors.email}</div>}
             </div>
-            <div className="mb-10">
-              {/* <Input placeholder="Country" type="text" name="country" onChange={handleChange} /> */}
+            <div className="mb-20">
               <ReactFlagsSelect
                 selected={form.country}
                 countryCode="NG"
@@ -60,13 +128,20 @@ const Form = () => {
                 selectButtonClassName="text-white"
                 onSelect={(code) => {
                   setForm({ ...form, country: code });
+                  if (code) {
+                    const errorEntries = Object.entries(errors).filter(([errorName]) => errorName !== 'country');
+                    setErrors(Object.fromEntries(errorEntries));
+                  }
                 }}
               />
+              {errors.country && <div className="input-error">{errors.country}</div>}
             </div>
 
             <div className="flex justify-center">
-              <Button variant="primary" type="submit" onClick={handleSubmit}>
-                Get early access
+              <Button variant="primary" type="submit" onClick={handleSubmit} disabled={loading && status === 'success'}>
+                {loading && <img src="/svgs/spinner.svg" alt="spinner" className="mr-5 w-10" />}
+                {status === 'success' && <img src="/svgs/checkmark.svg" alt="check" className="mr-5 w-10" />}
+                {status === 'success' ? 'Request Sent' : 'Get early access'}
               </Button>
             </div>
           </form>

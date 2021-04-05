@@ -1,7 +1,7 @@
 const Button = ({ variant, children, className, href, ...rest }) => {
   const classes =
     variant === 'primary'
-      ? `px-8 py-4 bg-blue text-white rounded-md text-base ${className} inline-block pointer outline-none 
+      ? `px-8 py-4 bg-blue text-white rounded-md text-base ${className} inline-flex pointer outline-none 
       hover:border-none hover:outline-none btn`
       : `${className}`;
   return (

@@ -7,7 +7,7 @@ export default function Home() {
     <div className="bg-dark">
       <section className="top-section min-h-100 md:min-h-screen">
         <div className="border-b border-border">
-          <header className="px-2 py-3 sm:py-8 flex container mx-auto justify-between text-white relative z-10  align-items-center">
+          <header className="py-8 px-8 flex container mx-auto justify-between text-white relative z-10  align-items-center">
             <svg width="134" height="34" viewBox="0 0 134 34" fill="none" xmlns="http://www.w3.org/2000/svg">
               <g filter="url(#filter0_b)">
                 <path
@@ -68,8 +68,8 @@ export default function Home() {
             </Button>
           </header>
         </div>
-        <div className="max-w-8xl top-text-container  mx-auto flex justify-center items-center  py-80 relative">
-          <div className="flex flex-col relative  z-10 pt-10 pb-5 ">
+        <div className="max-w-8xl top-text-container  mx-auto flex justify-center items-center pt-80 pb-40 sm:pb-80 sm:pt-80 relative">
+          <div className="flex flex-col relative  z-10 pt-10 pb-5 px-4">
             <h1 className="text-center font-medium  text-7xl  md:text-8xl ">
               Freelancing tools for the
               <br />
@@ -91,7 +91,8 @@ export default function Home() {
         </div>
       </section>
       <section className="app bg-dark  py-20 z-20 max-w-screen-lg px-10 sm:px-20 mx-auto relative">
-        <img src="/svgs/app.svg" alt="Versoe app" className="w-100 mt-10 md:-mt-300" />
+        <img src="/svgs/app.svg" alt="Versoe app" className="w-100 mt-10 md:-mt-300 hidden md:block" />
+        <img src="/svgs/app-mobile.svg" alt="varsoe mobile" className="md:hidden mx-auto" />
         <div className="grid md:grid-cols-2 grid-cols-1 gap-y-14 gap-x-64 items-center my-60">
           <div className="">
             <p className="text-red my-3 text-base">INVOICES</p>
