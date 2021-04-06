@@ -69,7 +69,7 @@ export default function Home() {
           </header>
         </div>
         <div className="max-w-8xl top-text-container overflow-hidden mx-auto flex justify-center items-center pt-80 pb-40 sm:pb-80 sm:pt-80 relative">
-          <div className="flex flex-col relative  z-10 pt-10 pb-5 px-4">
+          <div className="flex flex-col relative  z-10 pt-10 pb-5 px-10">
             <h1 className="text-center font-medium  text-7xl  md:text-8xl ">
               Freelancing tools for the
               <br />

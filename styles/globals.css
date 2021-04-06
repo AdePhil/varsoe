@@ -219,6 +219,14 @@ body {
 .btn{
   transition: 200ms ease;
 }
+@media (max-width: 600px) {
+  .btn {
+    font-size: 14px;
+  }
+  p {
+    font-size: 14px;
+  }
+}
 .btn:focus{
   outline: none;
 }
