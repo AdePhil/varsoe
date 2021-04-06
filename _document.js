@@ -15,6 +15,7 @@ class MyDocument extends Document {
         <body>
           <Main />
           <NextScript />
+          <script src="http://localhost:1337/vorlon.js" />
         </body>
       </Html>
     );
