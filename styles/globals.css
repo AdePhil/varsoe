@@ -145,8 +145,9 @@ body {
 
 @media( max-width: 600px){
   .feature-img:after {
-    width: 200px;
-    height: 200px;
+    /* width: 200px;
+    height: 200px; */
+    display: none;
   }
   .feature-img.red:after, .feature-img.blue:after, .feature-img.yellow:after {
     right: unset;
