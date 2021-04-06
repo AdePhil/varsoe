@@ -144,9 +144,9 @@ body {
 }
 
 @media( max-width: 600px){
-  .feature-img:after {
+  /* .feature-img:after {
     display: none;
-  }
+  } */
 }
 
 .feature-img.red:after {
