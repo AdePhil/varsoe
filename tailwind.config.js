@@ -14,6 +14,7 @@ module.exports = {
       darkBlue: 'rgba(61,101,214,1)',
       textColor: 'rgba(255,255,255,0.6)',
       inputBlue: 'rgba(17,20,28,1)',
+      yellow: 'rgba(249,160,0,1)',
     },
     extend: {
       fontSize: {
