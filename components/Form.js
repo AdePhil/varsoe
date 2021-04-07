@@ -90,11 +90,11 @@ const Form = () => {
   return (
     <div id="form">
       <div className="form flex items-center justify-center">
-        <div className="form-group bg-dark py-20 px-20 min-w-1/3   rounded-xl">
+        <div className="form-group bg-dark py-20 px-20 rounded-xl">
           <form action="POST">
             <h2 className="text-center text-5xl mb-20 gradient-text">Get early access</h2>
-            <div className="form-group  grid grid-cols-2 gap-10 mb-20">
-              <div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-10 ">
+              <div className="mb-20">
                 <Input
                   placeholder="First name"
                   value={form.firstName}
@@ -104,7 +104,7 @@ const Form = () => {
                 />
                 {errors.firstName && <div className="input-error">{errors.firstName}</div>}
               </div>
-              <div>
+              <div className="mb-20">
                 <Input
                   placeholder="Last name"
                   value={form.lastName}

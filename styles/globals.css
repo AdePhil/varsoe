@@ -48,6 +48,18 @@ body {
 
 
 
+.form-group {
+  min-width: 600px;
+  
+}
+@media (max-width: 601px) {
+  .form-group {
+    margin: 30px 0;
+    min-width: auto;
+    width: 90%;
+  }
+}
+
 .logo {
   width: 120px;
   object-fit: contain;
