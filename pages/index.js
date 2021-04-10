@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { useState } from 'react';
 import Button from '../components/Button';
 import Feature from '../components/Feature';
 import Footer from '../components/Footer';
@@ -35,7 +36,13 @@ const features = [
     textLeft: true,
   },
 ];
-export default function Home() {
+export default function Home({ deviceType }) {
+  const [navState, setNavState] = useState(false);
+  const toggleNavState = () => {
+    console.log('here');
+    setNavState((s) => !s);
+  };
+
   return (
     <div className="bg-dark">
       <section className="top-section min-h-100 md:min-h-screen">
@@ -48,16 +55,25 @@ export default function Home() {
           }}
           transition={{
             duration: 0.5,
-            delay: 0.75,
+            delay: deviceType === 'mobile' ? 0.75 : 2.6,
             easings: 'ease',
           }}
           className="border-b border-border"
         >
-          <header className="py-8 px-8 flex container mx-auto justify-between text-white relative z-10  align-items-center">
+          <header className="header py-8 px-8 flex container mx-auto justify-between text-white relative z-10  align-items-center">
             <img src="/img/logo.png" alt="Logo" className="logo" />
-            <Button variant="primary" href="#form">
+            <Button variant="primary" href="#form" className="btn-access">
               Get early access
             </Button>
+            <button type="button" className="hamburger" onClick={toggleNavState}>
+              <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="1" y="1" width="32" height="32" rx="16" fill="#0C0D11" />
+                <rect x="0.5" y="0.5" width="33" height="33" rx="16.5" stroke="white" strokeOpacity="0.2" />
+                <path d="M9 11H25" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                <path d="M9 17H25" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                <path d="M9 23H25" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </button>
           </header>
         </motion.div>
         <div className="max-w-8xl top-text-container overflow-hidden  mx-auto flex justify-center items-center pt-60 pb-40 sm:pb-80 sm:pt-80 relative">
@@ -172,6 +188,34 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <nav className={`mobile-nav ${navState ? 'active' : ''}`}>
+        <div className="flex justify-end">
+          <button type="button" className="w-10 mt-2 mb-10" onClick={toggleNavState}>
+            <img src="/svgs/close.svg" alt="close" />
+          </button>
+        </div>
+        <div className="py-10 px-10 mobile-border">
+          <div className="flex">
+            <Button variant="primary" className="flex justify-center w-full mb-20" onClick={toggleNavState}>
+              <a href="#form">Get early access</a>
+            </Button>
+          </div>
+          <div className="flex">
+            <a href="#" className="py-4 px-12 text-2xl">
+              Fb
+            </a>
+            <a href="#" className="py-4 px-12 text-2xl">
+              Tw
+            </a>
+            <a href="#" className="py-4 px-12 text-2xl">
+              Li
+            </a>
+            <a href="#" className="py-4 px-12 text-2xl">
+              Lg
+            </a>
+          </div>
+        </div>
+      </nav>
       <section className="app bg-dark  py-20 z-20 max-w-screen-lg px-10 sm:px-20 mx-auto relative overflow-hidden sm:overflow-visible">
         <motion.img
           initial={{
@@ -215,4 +259,15 @@ export default function Home() {
       <Footer />
     </div>
   );
+}
+
+export async function getServerSideProps(context) {
+  const UA = context.req.headers['user-agent'];
+  const isMobile = Boolean(UA.match(/Android|BlackBerry|iPhone|iPad|iPod|Opera Mini|IEMobile|WPDesktop/i));
+
+  return {
+    props: {
+      deviceType: isMobile ? 'mobile' : 'desktop',
+    },
+  };
 }

@@ -1,11 +1,11 @@
 const Button = ({ variant, children, className, href, ...rest }) => {
   const classes =
     variant === 'primary'
-      ? `px-8 py-4 bg-blue text-white rounded-md text-base ${className} inline-flex pointer outline-none 
-      hover:border-none hover:outline-none btn`
+      ? `px-8 py-4 bg-blue text-white rounded-md text-base  inline-flex pointer outline-none 
+      hover:border-none hover:outline-none btn ${className}`
       : `${className}`;
   return (
-    <div>
+    <>
       {!href ? (
         <button type="button" className={classes} {...rest}>
           {children}
@@ -15,7 +15,7 @@ const Button = ({ variant, children, className, href, ...rest }) => {
           {children}
         </a>
       )}
-    </div>
+    </>
   );
 };
 
