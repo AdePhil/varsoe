@@ -104,6 +104,12 @@ body {
 
 .icon {
   z-index: 12  !important;
+  
+}
+@media(max-width: 600px) {
+  .icon {
+    display: none;
+  }
 }
 
 .icon-absolute {

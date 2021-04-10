@@ -48,7 +48,7 @@ export default function Home() {
           }}
           transition={{
             duration: 0.5,
-            delay: 2.6,
+            delay: 0.75,
             easings: 'ease',
           }}
           className="border-b border-border"

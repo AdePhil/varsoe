@@ -90,7 +90,7 @@ const Form = () => {
   return (
     <div id="form">
       <div className="form flex items-center justify-center">
-        <div className="form-group bg-dark py-20 px-20 rounded-xl">
+        <div className="form-group bg-dark py-20 px-10 sm:py-20 sm:px-20  rounded-xl">
           <form action="POST">
             <h2 className="text-center text-5xl mb-20 gradient-text">Get early access</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-10 ">
