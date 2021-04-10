@@ -282,6 +282,9 @@ body {
 
 .hamburger{
   display: none;
+  width: 50px;
+  object-fit: cover;
+  justify-content: center;
 }
 .hamburger:focus{
   outline: none;
@@ -296,7 +299,7 @@ body {
   background-color: var(--dark);
   left: 0;
   padding: 20px;
-  transition: opacity 500ms ease;
+  transition: opacity 300ms ease;
 }
 
 .mobile-border{
@@ -308,7 +311,8 @@ body {
       display: none;
     }
     .hamburger {
-      display: inline-block
+         display: flex;
+
     }
      .mobile-nav.active  {
       opacity: 1;
