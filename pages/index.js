@@ -39,14 +39,27 @@ export default function Home() {
   return (
     <div className="bg-dark">
       <section className="top-section min-h-100 md:min-h-screen">
-        <div className="border-b border-border">
+        <motion.div
+          initial={{
+            opacity: 0,
+          }}
+          animate={{
+            opacity: 1,
+          }}
+          transition={{
+            duration: 0.5,
+            delay: 2.6,
+            easings: 'ease',
+          }}
+          className="border-b border-border"
+        >
           <header className="py-8 px-8 flex container mx-auto justify-between text-white relative z-10  align-items-center">
             <img src="/img/logo.png" alt="Logo" className="logo" />
             <Button variant="primary" href="#form">
               Get early access
             </Button>
           </header>
-        </div>
+        </motion.div>
         <div className="max-w-8xl top-text-container overflow-hidden  mx-auto flex justify-center items-center pt-60 pb-40 sm:pb-80 sm:pt-80 relative">
           <div className="flex flex-col relative  z-10 pt-10 pb-5 px-10">
             <motion.div
