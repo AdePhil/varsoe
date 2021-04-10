@@ -26,6 +26,9 @@ module.exports = {
       margin: {
         '-300': '-25vh',
       },
+      lineHeight: {
+        max: '3.9rem',
+      },
     },
   },
   variants: {

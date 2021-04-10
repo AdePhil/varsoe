@@ -119,17 +119,17 @@ body {
 }
 
 .icon-book {
-  left: -100px  !important;
+  left: 100px  !important;
   bottom: -120px  !important;
 }
 
 .icon-money-bag {
   top: -120px  !important;
-  right: -150px  !important;
+  right: -80px  !important;
 }
 
 .icon-aero {
-  bottom: -20px  !important;
+  bottom: 100px  !important;
   right: -250px  !important;
  
 }
@@ -148,10 +148,10 @@ body {
   content: '';
   top: 0;
   bottom: 0;
-  width: 400px;
-  height: 400px;
+  width: 300px;
+  height: 300px;
   border-radius: 50%;
-  filter: blur(500px);
+  filter: blur(400px);
 
 }
 
@@ -199,10 +199,12 @@ body {
 .menu-flags {
   background-color: rgba(17,20,28,1);
   border-radius: 0.75rem;
+  height: 60px;
 }
 
 .menu-flags  button {
   border: none;
+  font-size: 2rem !important;
 }
 
 .menu-flags  button:focus {
@@ -235,11 +237,13 @@ body {
 
 .menu-flags .ReactFlagsSelect-module_selectValue__152eS {
   color: #A1A1AA;
+  padding-top: 5px;
 }
 
 .input{
   border: 1px solid transparent;
   transition: 200ms ease;
+  height: 60px;
 }
 .input:focus {
   border-color: var(--blue);

@@ -11,8 +11,7 @@ const features = [
     name: 'invoices',
     tagline: `Generate, Send and <br />
     Follow up on Invoices`,
-    description: `Integrate "Pay with Bitsika" on your app or website so that Bitsika users can instantly pay you with their
-    Bitsika balance via our API. Payout to any Bitsika user account via our API as well.`,
+    description: `You never have to think about getting paid for what you do. Get invoices at the  tip of your fingers. Send invoices and automatically follow up on invoices.`,
     color: 'red',
     textLeft: true,
   },
@@ -21,8 +20,7 @@ const features = [
     img: '/img/payments.png',
     name: 'payments',
     tagline: `Get paid for  <br />  your services`,
-    description: `Integrate "Pay with Bitsika" on your app or website so that Bitsika users can instantly pay you with their
-    Bitsika balance via our API. Payout to any Bitsika user account via our API as well.`,
+    description: `Integrate "Pay with Bitsika" on your app or website so that Bitsika users can instantly pay you with their Bitsika balance via our API. Payout to any Bitsika user account via our API as well. `,
     color: 'blue',
     textLeft: false,
   },
@@ -32,8 +30,7 @@ const features = [
     name: 'projects',
     tagline: `Manage your <br />
     projects and clients`,
-    description: `Integrate "Pay with Bitsika" on your app or website so that Bitsika users can instantly pay you with their
-    Bitsika balance via our API. Payout to any Bitsika user account via our API as well.`,
+    description: `Integrate "Pay with Bitsika" on your app or website so that Bitsika users can instantly pay you with their Bitsika balance via our API. Payout to any Bitsika user account via our API as well. `,
     color: 'yellow',
     textLeft: true,
   },
@@ -70,9 +67,9 @@ export default function Home() {
               className="flex flex-col"
             >
               <h1 className="text-center font-medium  text-7xl  md:text-8xl ">
-                Freelancing tools for the
+                Invoices and Payment
                 <br className="hidden sm:block" />
-                best of us.
+                made very easy.
               </h1>
               <p className="text-center my-5  text-2xl md:text-3xl font-normal">
                 Send invoices and get paid from anywhere in the world without <br /> thinking about it.
@@ -90,7 +87,7 @@ export default function Home() {
               }}
               animate={{
                 opacity: 1,
-                scale: 1,
+                scale: [2.2, 2, 1],
               }}
               transition={{
                 // type: 'tween',
@@ -109,7 +106,7 @@ export default function Home() {
               }}
               animate={{
                 opacity: 1,
-                scale: 1,
+                scale: [2, 1.5, 1],
               }}
               transition={{
                 // type: 'tween',
@@ -128,7 +125,7 @@ export default function Home() {
               }}
               animate={{
                 opacity: 1,
-                scale: 1,
+                scale: [2, 1.5, 1],
               }}
               transition={{
                 // type: 'tween',
@@ -147,7 +144,7 @@ export default function Home() {
               }}
               animate={{
                 opacity: 1,
-                scale: 1,
+                scale: [2, 1.5, 1],
               }}
               transition={{
                 // type: 'tween',

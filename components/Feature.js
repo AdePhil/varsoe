@@ -41,8 +41,8 @@ const Feature = ({ textLeft, img, name, tagline, description, color }) => {
           repeatType: 'reverse',
         }}
       >
-        <p className={`${nameToTextColor[color]} my-3 text-base uppercase`}>{name}</p>
-        <h3 className="text-5xl" dangerouslySetInnerHTML={{ __html: tagline }} />
+        <p className={`${nameToTextColor[color]} my-3 text-base uppercase `}>{name}</p>
+        <h3 className="text-5xl leading-max" dangerouslySetInnerHTML={{ __html: tagline }} />
         <p className="text-textColor max-w-full md:max-w-2xl leading-relaxed py-10 text-2xl">{description}</p>
       </motion.div>
       <motion.div
