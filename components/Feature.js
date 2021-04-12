@@ -16,7 +16,6 @@ const Feature = ({ textLeft, img, name, tagline, description, color }) => {
 
   useEffect(() => {
     if (inView) {
-      // controls.set('initial');
       controls.start('visible');
     }
   }, [controls, inView]);

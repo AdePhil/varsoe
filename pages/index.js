@@ -39,7 +39,6 @@ const features = [
 export default function Home({ deviceType }) {
   const [navState, setNavState] = useState(false);
   const toggleNavState = () => {
-    console.log('here');
     setNavState((s) => !s);
   };
 
@@ -101,7 +100,7 @@ export default function Home({ deviceType }) {
                 made very easy.
               </h1>
               <p className="text-center my-5  text-2xl md:text-3xl font-normal">
-                Send invoices and get paid from anywhere in the world without <br /> thinking about it.
+                Send invoices and get paid from anywhere in the world without <br /> &nbsp; thinking about it.
               </p>
               <div className="mx-auto inline-block">
                 <Button variant="primary" href="#form" className="flex align-center">
