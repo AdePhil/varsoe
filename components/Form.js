@@ -54,7 +54,7 @@ const Form = () => {
       },
     };
     setLoading(true);
-    fetch('https://api.airtable.com/v0/appAiEwkoRtfgXxHi/form', {
+    fetch(process.env.API_URL, {
       method: 'POST',
       headers: { Authorization: `Bearer ${process.env.AIRTABLE_API}`, 'Content-Type': 'application/json' },
       body: JSON.stringify(fields),
