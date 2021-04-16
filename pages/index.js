@@ -97,7 +97,7 @@ export default function Home({ deviceType }) {
               <h1 className="text-center font-medium  text-7xl  md:text-8xl ">
                 Invoices and Payment
                 <br className="hidden sm:block" />
-                made very easy.
+                {' made very easy.'}
               </h1>
               <p className="text-center my-5  text-2xl md:text-3xl font-normal">
                 Send invoices and get paid from anywhere in the world without <br /> &nbsp; thinking about it.
@@ -199,19 +199,18 @@ export default function Home({ deviceType }) {
               <a href="#form">Get early access</a>
             </Button>
           </div>
-          <div className="flex">
-            <a href="#" className="py-4 px-12 text-2xl">
-              Fb
-            </a>
-            <a href="#" className="py-4 px-12 text-2xl">
-              Tw
-            </a>
-            <a href="#" className="py-4 px-12 text-2xl">
-              Li
-            </a>
-            <a href="#" className="py-4 px-12 text-2xl">
-              Lg
-            </a>
+          <div className="flex justify-center">
+            <div className="inline-flex">
+              <a href="https://twitter.com/getvarsoe" className="py-4 px-12  text-2xl">
+                Tw
+              </a>
+              <a href="https://www.linkedin.com/company/varsoe" className="py-4 px-12  text-2xl">
+                Li
+              </a>
+              <a href="https://www.instagram.com/getvarsoe/" className="py-4 px-12  text-2xl">
+                Ig
+              </a>
+            </div>
           </div>
         </div>
       </nav>
