@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { useState } from 'react';
+import Head from 'next/head';
 import Button from '../components/Button';
 import Feature from '../components/Feature';
 import Footer from '../components/Footer';
@@ -44,6 +45,10 @@ export default function Home({ deviceType }) {
 
   return (
     <div className="bg-dark">
+      <Head>
+        <title>Varsoe | Welcome to Varsoe</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      </Head>
       <section className="top-section min-h-100 md:min-h-screen">
         <motion.div
           initial={{
