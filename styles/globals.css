@@ -293,6 +293,7 @@ body {
   opacity: 0;
   pointer-events: none;;
   position: fixed;
+  z-index: -2;
   top: 0px;
   bottom: 0;
   right: 0;
