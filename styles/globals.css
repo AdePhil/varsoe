@@ -300,7 +300,7 @@ body {
   background-color: var(--dark);
   left: 0;
   padding: 20px;
-  transition: opacity 300ms ease;
+  transition: z-index .01s 1s, opacity 300ms ease;
 }
 
 .mobile-border{
@@ -319,6 +319,7 @@ body {
       opacity: 1;
       pointer-events: all;
       z-index: 70;
+      transition: z-index 0s, opacity 300ms ease;
     }
 }
 
