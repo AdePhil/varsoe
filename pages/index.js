@@ -22,7 +22,7 @@ const features = [
     img: '/img/payments.png',
     name: 'payments',
     tagline: `Get paid for  <br />  your services`,
-    description: `Integrate "Pay with Bitsika" on your app or website so that Bitsika users can instantly pay you with their Bitsika balance via our API. Payout to any Bitsika user account via our API as well. `,
+    description: `Spend your time doing the work not thinking of how to get paid. Create payment links and it doesn’t matter how your clients pay. You simply get your money.`,
     color: 'blue',
     textLeft: false,
   },
@@ -109,7 +109,23 @@ export default function Home({ deviceType }) {
               </p>
               <div className="mx-auto inline-block">
                 <Button variant="primary" href="#form" className="flex align-center">
-                  Get early access &nbsp; <span className="mt-0.5">></span>
+                  <span>Get early access &nbsp;</span>
+                  <svg
+                    className="self-center"
+                    width="6"
+                    height="10"
+                    viewBox="0 0 6 10"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M1 1L5 5L1 9"
+                      stroke="white"
+                      strokeWidth="1.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
                 </Button>
               </div>
             </motion.div>
@@ -250,7 +266,7 @@ export default function Home({ deviceType }) {
             delay: 0.8,
             easings: 'ease',
           }}
-          src="/img/app-mobile.png"
+          src="/img/app-mobile.svg"
           alt="varsoe mobile"
           className="md:hidden mx-auto"
         />
