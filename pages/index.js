@@ -32,7 +32,7 @@ const features = [
     name: 'projects',
     tagline: `Manage your <br />
     projects and clients`,
-    description: `Integrate "Pay with Bitsika" on your app or website so that Bitsika users can instantly pay you with their Bitsika balance via our API. Payout to any Bitsika user account via our API as well. `,
+    description: `Track your projects and customers. Track payments relating to projects and customers. It’s simply that easy.`,
     color: 'yellow',
     textLeft: true,
   },
@@ -222,13 +222,28 @@ export default function Home({ deviceType }) {
           </div>
           <div className="flex justify-center">
             <div className="inline-flex">
-              <a href="https://twitter.com/getvarsoe" className="py-4 px-12  text-2xl">
+              <a
+                href="https://twitter.com/getvarsoe"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="py-4 px-12  text-2xl"
+              >
                 Tw
               </a>
-              <a href="https://www.linkedin.com/company/varsoe" className="py-4 px-12  text-2xl">
+              <a
+                href="https://www.linkedin.com/company/varsoe"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="py-4 px-12  text-2xl"
+              >
                 Li
               </a>
-              <a href="https://www.instagram.com/getvarsoe/" className="py-4 px-12  text-2xl">
+              <a
+                href="https://www.instagram.com/getvarsoe/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="py-4 px-12  text-2xl"
+              >
                 Ig
               </a>
             </div>
