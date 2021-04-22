@@ -64,7 +64,7 @@ export default function Home({ deviceType }) {
           }}
           className="border-b border-border"
         >
-          <header className="header py-8 px-8 flex container mx-auto justify-between text-white relative z-10  align-items-center">
+          <header className="header py-8 px-8 flex container mx-auto justify-between text-white relative z-10  items-center">
             <img src="/img/logo.png" alt="Logo" className="logo" />
             <Button variant="primary" href="#form" className="btn-access">
               Get early access
