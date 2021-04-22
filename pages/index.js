@@ -266,7 +266,7 @@ export default function Home({ deviceType }) {
             delay: 0.8,
             easings: 'ease',
           }}
-          src="/img/app-mobile.svg"
+          src="/img/app-mobile.png"
           alt="varsoe mobile"
           className="md:hidden mx-auto"
         />
