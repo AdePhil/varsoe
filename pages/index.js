@@ -5,6 +5,7 @@ import Button from '../components/Button';
 import Feature from '../components/Feature';
 import Footer from '../components/Footer';
 import Form from '../components/Form';
+import Modal from '../components/Modal';
 
 const features = [
   {
@@ -39,6 +40,7 @@ const features = [
 ];
 export default function Home({ deviceType }) {
   const [navState, setNavState] = useState(false);
+  const [showModal, setShowModal] = useState(false);
   const toggleNavState = () => {
     setNavState((s) => !s);
   };
@@ -49,6 +51,7 @@ export default function Home({ deviceType }) {
         <title>Varsoe | Welcome to Varsoe</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
+      <Modal showModal={showModal} setShowModal={setShowModal} />
       <section className="top-section min-h-100 md:min-h-screen">
         <motion.div
           initial={{
@@ -289,7 +292,7 @@ export default function Home({ deviceType }) {
           <Feature {...feature} key={feature.id} />
         ))}
       </section>
-      <Form />
+      <Form setShowModal={setShowModal} />
       <Footer />
     </div>
   );
