@@ -12,10 +12,11 @@ class MyDocument extends Document {
         <Head />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@varsoe" />
-        <meta name="twitter:title" content="Join the waiting list for varsoe" />
+        <meta name="twitter:title" content="Invoices and Payment made very easy." />
         <meta
           name="twitter:description"
-          content="I just joined the waiting list for varsoe. You can too. help us build the product you'd love to use"
+          content="Send invoices and get paid from anywhere in the world without
+          thinking about it."
         />
         <meta
           name="twitter:image"

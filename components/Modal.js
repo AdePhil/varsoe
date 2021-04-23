@@ -3,7 +3,8 @@ import { useCallback, useEffect, useRef } from 'react';
 
 const Modal = ({ showModal, setShowModal }) => {
   const modalRef = useRef();
-
+  const urlContent =
+    'I just joined the waiting list for @getvarsoe. You should check it out too. https://www.varsoe.com';
   const closeModal = (e) => {
     if (modalRef.current === e.target) {
       setShowModal(false);
@@ -81,7 +82,12 @@ const Modal = ({ showModal, setShowModal }) => {
                 We’ve sent you a mail confirming your status on the waitlist. You’ll be the first to get updates on
                 Varsoe.
               </p>
-              <a className="modal-share-btn" href="#">
+              <a
+                className="modal-share-btn"
+                target="_blank"
+                href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(urlContent.trim())}`}
+                rel="noopener noreferrer"
+              >
                 Share on Twitter
               </a>
             </motion.div>
