@@ -82,12 +82,7 @@ const Modal = ({ showModal, setShowModal }) => {
                 We’ve sent you a mail confirming your status on the waitlist. You’ll be the first to get updates on
                 Varsoe.
               </p>
-              <a
-                className="modal-share-btn"
-                target="_blank"
-                href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(urlContent.trim())}`}
-                rel="noopener noreferrer"
-              >
+              <a className="modal-share-btn" target="_blank" href="https://bit.ly/2Qs4BPP" rel="noopener noreferrer">
                 Share on Twitter
               </a>
             </motion.div>
