@@ -6,38 +6,8 @@ import Feature from '../components/Feature';
 import Footer from '../components/Footer';
 import Form from '../components/Form';
 import Modal from '../components/Modal';
+import { features } from '../data';
 
-const features = [
-  {
-    id: 1,
-    img: '/img/invoice.png',
-    name: 'invoices',
-    tagline: `Generate, Send and <br />
-    Follow up on Invoices`,
-    description: `You never have to think about getting paid for what you do. Get invoices at the  tip of your fingers. Send invoices and automatically follow up on invoices.`,
-    color: 'red',
-    textLeft: true,
-  },
-  {
-    id: 2,
-    img: '/img/payments.png',
-    name: 'payments',
-    tagline: `Get paid for  <br />  your services`,
-    description: `Spend your time doing the work not thinking of how to get paid. Create payment links and it doesn’t matter how your clients pay. You simply get your money.`,
-    color: 'blue',
-    textLeft: false,
-  },
-  {
-    id: 3,
-    img: '/img/projects.png',
-    name: 'projects',
-    tagline: `Manage your <br />
-    projects and clients`,
-    description: `Track your projects and customers. Track payments relating to projects and customers. It’s simply that easy.`,
-    color: 'yellow',
-    textLeft: true,
-  },
-];
 export default function Home({ deviceType }) {
   const [navState, setNavState] = useState(false);
   const [showModal, setShowModal] = useState(false);

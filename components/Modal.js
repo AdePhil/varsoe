@@ -3,8 +3,6 @@ import { useCallback, useEffect, useRef } from 'react';
 
 const Modal = ({ showModal, setShowModal }) => {
   const modalRef = useRef();
-  const urlContent =
-    'I just joined the waiting list for @getvarsoe. You should check it out too. https://www.varsoe.com';
   const closeModal = (e) => {
     if (modalRef.current === e.target) {
       setShowModal(false);
