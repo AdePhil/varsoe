@@ -29,8 +29,8 @@ const Modal = ({ showModal, setShowModal }) => {
         {showModal && (
           <div className="modal-bg" ref={modalRef} onClick={closeModal}>
             <motion.div
-              initial={{ opacity: 0.8, scale: 0 }}
-              animate={{ opacity: 1, scale: 1 }}
+              initial={{ opacity: 0.8 }}
+              animate={{ opacity: 1 }}
               transition={{
                 type: 'tween',
                 duration: 0.5,
