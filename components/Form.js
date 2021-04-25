@@ -3,13 +3,20 @@ import ReactFlagsSelect from 'react-flags-select';
 import Button from './Button';
 import Input from './Input';
 import CodeCountryNameMap from '../countries';
+import Checkbox from './CheckBox';
 
 // eslint-disable-next-line no-control-regex
 export const EMAIL_REGEX = /(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/;
 export const PASSWORD_REGEX = /(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}/;
-
+const INITIAL_STATE = {
+  email: '',
+  firstName: '',
+  lastName: '',
+  country: '',
+  terms: false,
+};
 const Form = ({ setShowModal }) => {
-  const [form, setForm] = useState({ country: '' });
+  const [form, setForm] = useState(INITIAL_STATE);
   const [errors, setErrors] = useState({});
   const [loading, setLoading] = useState(false);
   const [status, setStatus] = useState('');
@@ -30,6 +37,10 @@ const Form = ({ setShowModal }) => {
 
     if (!form.country) {
       errs.country = 'Please select your country';
+    }
+
+    if (!form.terms) {
+      errs.terms = 'Please agree to receive product updates';
     }
 
     const isValid = Object.values(errs).every((err) => err === '');
@@ -61,7 +72,7 @@ const Form = ({ setShowModal }) => {
     })
       .then(() => {
         setStatus('success');
-        setForm({ email: '', firstName: '', lastName: '', country: '' });
+        setForm(INITIAL_STATE);
         setShowModal(true);
       })
       .catch((error) => {
@@ -73,7 +84,10 @@ const Form = ({ setShowModal }) => {
   };
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
+    let { name, value } = e.target;
+    if (name === 'terms') {
+      value = value === 'false';
+    }
     setForm({ ...form, [name]: value });
     if (value) {
       const errorEntries = Object.entries(errors).filter(([errorName]) => errorName !== name);
@@ -136,6 +150,16 @@ const Form = ({ setShowModal }) => {
                 }}
               />
               {errors.country && <div className="input-error">{errors.country}</div>}
+            </div>
+            <div className="mb-20">
+              <p />
+              <Checkbox
+                name="terms"
+                label="I agree to receive product updates from Varsoe."
+                onChange={handleChange}
+                value={form.terms}
+              />
+              {errors.terms && <div className="input-error">{errors.terms}</div>}
             </div>
 
             <div className="flex justify-center">
