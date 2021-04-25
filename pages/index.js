@@ -183,7 +183,7 @@ export default function Home({ deviceType }) {
       </section>
       <nav className={`mobile-nav ${navState ? 'active' : ''}`}>
         <div className="flex justify-end">
-          <button type="button" className="w-10 mt-2 mb-10" onClick={toggleNavState}>
+          <button type="button" className="w-10 mt-2 mb-10 ml-4" onClick={toggleNavState}>
             <img src="/svgs/close.svg" alt="close" />
           </button>
         </div>
