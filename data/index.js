@@ -19,7 +19,7 @@ export const features = [
     id: 2,
     img: '/img/payments.png',
     name: 'payments',
-    tagline: `Get paid for  <br />  your services`,
+    tagline: `Get paid from <br />anywhere in the world`,
     description: `Spend your time doing the work not thinking of how to get paid. Create payment links and it doesn’t matter how your clients pay. You simply get your money.`,
     color: 'blue',
     textLeft: false,
