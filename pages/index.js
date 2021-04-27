@@ -196,7 +196,7 @@ export default function Home({ deviceType }) {
           <div className="flex justify-center">
             <div className="inline-flex">
               <a
-                href="https://twitter.com/getvarsoe"
+                href="https://bit.ly/3tEjJIk"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="py-4 px-12  text-2xl"
@@ -204,7 +204,7 @@ export default function Home({ deviceType }) {
                 Tw
               </a>
               <a
-                href="https://www.linkedin.com/company/varsoe"
+                href="https://bit.ly/3xdAlbW"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="py-4 px-12  text-2xl"
@@ -212,7 +212,7 @@ export default function Home({ deviceType }) {
                 Li
               </a>
               <a
-                href="https://www.instagram.com/getvarsoe/"
+                href="https://bit.ly/3dEkwDB"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="py-4 px-12  text-2xl"

@@ -22,7 +22,7 @@ class MyDocument extends Document {
           name="twitter:image"
           content="https://res.cloudinary.com/dy8si4f7g/image/upload/v1619215867/twitter_ybb0xa.png"
         />
-        <meta name="twitter:url" content="https://varsoe.com" />
+        <meta name="twitter:url" content="https://bit.ly/3gEazI6" />
         <body>
           <Main />
           <NextScript />
