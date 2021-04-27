@@ -82,10 +82,8 @@ const Form = ({ setShowModal }) => {
   };
 
   const handleChange = (e) => {
-    let { name, value } = e.target;
-    if (name === 'terms') {
-      value = value === 'false';
-    }
+    let { name, value, type, checked } = e.target;
+    value = type === 'checkbox' ? checked : value;
     setForm({ ...form, [name]: value });
     if (value) {
       const errorEntries = Object.entries(errors).filter(([errorName]) => errorName !== name);
@@ -155,7 +153,7 @@ const Form = ({ setShowModal }) => {
                 name="terms"
                 label="I agree to receive product updates from Varsoe."
                 onChange={handleChange}
-                value={form.terms}
+                checked={form.terms}
               />
               {errors.terms && <div className="input-error">{errors.terms}</div>}
             </div>

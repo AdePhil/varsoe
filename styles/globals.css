@@ -462,7 +462,7 @@ body {
   width: 1em;
   height: 1em;
   border-radius: 0.25em;
-  background-color: var(--blue);
+  /* background-color: var(--blue); */
   border: 0.1em solid currentColor;
 }
 .checkbox__control svg {
@@ -489,6 +489,11 @@ body {
 .checkbox__input input:checked + .checkbox__control svg {
   transform: scale(1);
 }
+
+.checkbox__input input:checked + .checkbox__control {
+  background-color: var(--blue);
+}
+/* background-color: var(--blue); */
 .checkbox__input input:disabled + .checkbox__control {
   color: var(--disabled);
 }
